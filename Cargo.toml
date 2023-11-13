@@ -2023,6 +2023,17 @@ category = "Tools"
 wasm = true
 
 [[example]]
+name = "keyboard_viewer"
+path = "examples/tools/keyboard_viewer.rs"
+doc-scrape-examples = true
+
+[package.metadata.example.keyboard_viewer]
+name = "Keyboard Viewer"
+description = "Shows a visualization of the keyboard"
+category = "Tools"
+wasm = true
+
+[[example]]
 name = "nondeterministic_system_order"
 path = "examples/ecs/nondeterministic_system_order.rs"
 doc-scrape-examples = true
