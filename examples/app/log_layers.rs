@@ -21,10 +21,12 @@ impl<S: Subscriber> Layer<S> for CustomLayer {
 // We don't need App for this example, as we are just printing log information.
 // For an example that uses App, see log_layers_ecs.
 fn custom_layer(_app: &mut App) -> Option<BoxedLayer> {
-    // You can provide multiple layers like this, since Vec<Layer> is also a layer:
+    // You can provide multiple layers like this, since Vec<Layer> is also a Layer.
     Some(Box::new(vec![
         bevy::log::tracing_subscriber::fmt::layer()
             .with_file(true)
+            .with_line_number(true)
+            // see https://docs.rs/tracing-subscriber/latest/tracing_subscriber/fmt/struct.Layer.html for other options
             .boxed(),
         CustomLayer.boxed(),
     ]))
